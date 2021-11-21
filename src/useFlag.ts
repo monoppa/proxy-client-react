@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState, useRef } from 'react';
-import FlagContext from './FlagContext';
+import { useContext, useEffect, useState, useRef } from "react";
+import FlagContext from "./FlagContext";
 
 const useFlag = (name: string) => {
   const { isEnabled, client } = useContext(FlagContext);
@@ -9,16 +9,18 @@ const useFlag = (name: string) => {
 
   useEffect(() => {
     if (!client) return;
-    client.on('update', () => {
+    client.on("update", () => {
       const enabled = isEnabled(name);
+      console.log("update", enabled);
       if (enabled !== flagRef.current) {
         flagRef.current = enabled;
         setFlag(!!enabled);
       }
     });
 
-    client.on('ready', () => {
+    client.on("ready", () => {
       const enabled = isEnabled(name);
+      console.log("ready", enabled);
       setFlag(enabled);
     });
   }, [client]);
