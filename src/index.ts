@@ -20,6 +20,7 @@ import useFlagsStatus from './useFlagsStatus';
 import useVariant from './useVariant';
 import useUnleashContext from './useUnleashContext';
 import useUnleashClient from './useUnleashClient';
+import FlagContext from "./FlagContext";
 
 export {
   FlagProvider,
@@ -28,6 +29,7 @@ export {
   useVariant,
   useUnleashContext,
   useUnleashClient,
+  FlagContext,
 };
 
 export default FlagProvider;
