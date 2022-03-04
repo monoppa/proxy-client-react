@@ -1,5 +1,6 @@
+/** @format */
 declare const useFlagsStatus: () => {
-    flagsReady: boolean;
+    flagsReady: any;
     flagsError: any;
 };
 export default useFlagsStatus;

@@ -1,7 +1,9 @@
+/** @format */
 import * as React from 'react';
-import { IConfig } from 'unleash-proxy-client';
+import { UnleashClient, IConfig } from 'unleash-proxy-client';
 interface IFlagProvider {
-    config: IConfig;
+    config?: IConfig;
+    unleashClient?: UnleashClient;
 }
 declare const FlagProvider: React.FC<IFlagProvider>;
 export default FlagProvider;
